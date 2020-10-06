@@ -1646,8 +1646,8 @@ ashade-widget ashade-widget--about {
 
 .ashade-widget--about__head img {
   display: block;
-  width: 150px;
-  height: auto;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
 }
 
@@ -1657,7 +1657,7 @@ ashade-widget ashade-widget--about {
   width: 100%;
   display: block;
   right: 0;
-  top: 50%;
+  bottom: 0;
   transform: translateY(-50%);
 }
 
