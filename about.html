@@ -116,6 +116,45 @@
           font-size: 11px;
         }
       }
+      .accordion-wrapper {
+        display: grid;
+        gap: 15px;
+        width: 80%;
+        margin: 0 auto;
+      }
+      .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+      }
+
+      .panel p {
+        padding: 15px 0;
+      }
+
+      /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+      .active,
+      .accordion:hover {
+        background-color: #616161;
+        color: #fff;
+      }
+
+      .panel {
+        padding: 0 18px;
+        background-color: #cccccc;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+      .panel p {
+        color: #000;
+      }
     </style>
   </head>
 
@@ -142,9 +181,6 @@
               <li><a href="services.html">Services</a></li>
               <li class="menu-item-has-children">
                 <a href="about.html">About Us</a>
-              </li>
-              <li class="menu-item-has-children">
-                <a href="faq.html">FAQs</a>
               </li>
               <li><a href="contacts.html">Contact Us</a></li>
               <li>
@@ -173,26 +209,94 @@
         <div class="ashade-content">
           <section class="about-us-intro-grid">
             <div class="about-us-intro-grid-item">
-              <img src="./icons/cryptocurrency.svg" alt="" />
+              <img src="./img/about-us/cryptocurrency.png" alt="" />
               <h6>Clear and Truthful information</h6>
             </div>
             <div class="about-us-intro-grid-item">
-              <img src="./icons/honesty.svg" alt="" />
+              <img src="./img/about-us/respect.png" alt="" />
               <h6>Respect for our Customers</h6>
             </div>
             <div class="about-us-intro-grid-item">
-              <img src="./icons/customer-support.svg" alt="" />
+              <img src="./img/about-us/customer-support.png" alt="" />
               <h6>The Best Customer Experience</h6>
             </div>
             <div class="about-us-intro-grid-item">
-              <img src="./icons/secure-data.svg" alt="" />
+              <img src="./img/about-us/secure-data.png" alt="" />
               <h6>Privacy and Data Security</h6>
             </div>
             <div class="about-us-intro-grid-item">
-              <img src="./icons/online-payment.svg" alt="" />
+              <img src="./img/about-us/pay.png" alt="" />
               <h6>Live and Paychek Values</h6>
             </div>
           </section>
+
+          <div class="accordion-wrapper">
+            <span
+              style="
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: bold;
+              "
+              >frequently asked questions</span
+            >
+            <h3 style="text-align: center; line-height: 0.3">FAQ</h3>
+            <div>
+              <button class="accordion">
+                What are your loan amounts and terms?
+              </button>
+              <div class="panel">
+                <p>
+                  Our term loans range from $5,000 – $500,000 over 3 – 36 month
+                  terms. Our lines of credit go up to $100,000. Payments are
+                  made over six months. The lines are revolving so as you pay
+                  down your balance, your available funds increase.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <button class="accordion">
+                How does the application process work?
+              </button>
+              <div class="panel">
+                <p>
+                  Our term loans range from $5,000 – $500,000 over 3 – 36 month
+                  terms. Our lines of credit go up to $100,000. Payments are
+                  made over six months. The lines are revolving so as you pay
+                  down your balance, your available funds increase.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <button class="accordion">
+                What information do I need to apply?
+              </button>
+              <div class="panel">
+                <p>
+                  Our term loans range from $5,000 – $500,000 over 3 – 36 month
+                  terms. Our lines of credit go up to $100,000. Payments are
+                  made over six months. The lines are revolving so as you pay
+                  down your balance, your available funds increase.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <button class="accordion">
+                How do I qualify for Paycheck financing?
+              </button>
+              <div class="panel">
+                <p>
+                  Our term loans range from $5,000 – $500,000 over 3 – 36 month
+                  terms. Our lines of credit go up to $100,000. Payments are
+                  made over six months. The lines are revolving so as you pay
+                  down your balance, your available funds increase.
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div class="swiper-container">
             <h3 style="text-align: center">
@@ -512,6 +616,21 @@
           },
         },
       });
+
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
     </script>
   </body>
 </html>

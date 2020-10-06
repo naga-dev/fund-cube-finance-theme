@@ -1185,11 +1185,6 @@ nav.ashade-nav ul.main-menu li.current-menu-ancestor > a {
   border-radius: 4px;
 }
 
-.about-us-intro-grid-item:hover {
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-  transform: scale(1.1);
-}
-
 .about-us-intro-grid-item img {
   width: 80px;
   height: 80px;
@@ -1628,11 +1623,6 @@ a.ashade-learn-more:hover:after {
   margin: 0 0 0 20px;
 }
 
-/* About Widget */
-ashade-widget ashade-widget--about {
-  border: 1px solid red;
-}
-
 .ashade-widget--about__head {
   position: relative;
   margin: 0 0 28px 0;
@@ -1646,8 +1636,8 @@ ashade-widget ashade-widget--about {
 
 .ashade-widget--about__head img {
   display: block;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
 }
 
@@ -3389,23 +3379,13 @@ p.ashade-intro {
 .no-card-wrapper {
   border-radius: 4px;
 }
-/* .yes-or-no-section-wrapper .yes-card-wrapper,
-.no-card-wrapper img {
-  width: 80px;
-  height: auto;
-  margin-bottom: 20
-} */
 
 .yes-or-no-section-wrapper .yes-card-wrapper {
-  background-color: #fff;
-  color: #fff;
   padding: 30px 120px;
   transition: transform 0.4s ease-in-out;
-  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 }
 
 .yes-or-no-section-wrapper .no-card-wrapper {
-  background-image: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
   color: #fff;
   padding: 30px 120px;
   transition: transform 0.4s ease-in-out;
