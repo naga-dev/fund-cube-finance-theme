@@ -3363,7 +3363,8 @@ p.ashade-intro {
 
 .our-servieces-left-right .content {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   padding: 30px;
 }
