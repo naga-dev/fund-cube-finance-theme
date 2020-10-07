@@ -821,12 +821,6 @@ input[type="submit"] {
   transition: background 0.3s, border 0.3s, color 0.3s;
 }
 
-input:hover,
-textarea:hover {
-  background: rgba(0, 0, 0, 0.5);
-  border-color: #5c5c60;
-}
-
 input::-webkit-input-placeholder {
   opacity: 1;
   color: #808080;
@@ -1172,7 +1166,6 @@ nav.ashade-nav ul.main-menu li.current-menu-ancestor > a {
 }
 
 .about-us-intro-grid-item {
-  border: 2px solid #313133;
   display: flex;
   flex-direction: column;
   align-items: center;
