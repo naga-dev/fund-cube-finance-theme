@@ -3444,6 +3444,7 @@ p.ashade-intro {
   min-height: 400px;
   border-radius: 10px;
   overflow: hidden;
+  border: 1px solid #808080;
 }
 
 .flip-card-inner {
