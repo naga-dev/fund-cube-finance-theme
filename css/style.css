@@ -1356,14 +1356,14 @@ nav.ashade-nav ul.main-menu li.current-menu-ancestor > a {
   .ashade-back.is-to-top
   span:first-child {
   margin: 0 0 3px 0;
-  color: rgba(255, 255, 255, 0.5);
+  color: #114f38;
   transform: translateX(25px);
 }
 
 .ashade-back-wrap.is-loaded .ashade-back:not(.is-to-top) span:last-child,
 .has-to-top .ashade-back-wrap.is-loaded .ashade-back.is-to-top span:last-child {
   margin: 0;
-  color: #114f38;
+  color: rgba(255, 255, 255, 0.5);
   transform: translateX(0px);
 }
 
@@ -3363,7 +3363,7 @@ p.ashade-intro {
 }
 
 .yes-or-no-section-wrapper {
-  margin: 60px auto;
+  margin: 10px auto 60px auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;

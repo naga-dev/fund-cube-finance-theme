@@ -30,29 +30,59 @@
 			padding: 8px;
 		}
 		#customers tr {
-			background-color: #dedede;
 			color: #000;
 			border-bottom: 1px solid #0000002e;
 		}
 		
-		#customers tr:hover {background-color: #ddd;}
+		#customers tr:nth-child(odd) {
+			background-color: #dedede;
+		}
+		#customers tr:nth-child(even) {
+			background-color: #a1c8c5;
+		}
 		
 		#customers th {
-			padding-top: 12px;
-			padding-bottom: 12px;
 			text-align: left;
-			background-color: #808080;
+			background-color: #114f38;
 			color: white;
 			font-weight: 300;
+			/* padding: 12px 15px */
+			font-size: 14px
 		}
 		
 		#customers td {
-			padding: 15px 10px;
+			padding: 8px 15px;
+			border: 1px solid #fff
 		}
 
 		#customers img {
-			width: 40px;
-			height: auto;
+			width: 15px;
+			height: 15px;
+			margin: 0 auto
+		}
+
+		#customers .img-wrapper {
+			width: 100px;
+		}
+
+		@media screen  and (max-width: 992px) {
+			#customers {
+				width: 100% !important;
+			}
+
+			#customers td{
+				font-size: 10px !important
+			}
+
+			#customers td p{
+				line-height: 1.6;
+			}
+			
+			#customers th {
+				font-size: 12px !important;
+				padding: 5px !important;
+				width: 60% !important;
+			}
 		}
 		</style>
 
@@ -95,7 +125,7 @@
 	<main class="ashade-content-wrap">
 		<div class="ashade-content-scroll">
 			<div class="ashade-content">
-
+				<h4 style="text-align: center; width: 100%;">some of our features</h4>
 				<div class="our-services-intro-wrapper">
 					<div class="flip-card">
 						<div class="flip-card-inner">
@@ -175,7 +205,9 @@
 						</div>
 					</div>
 				</div>
-
+ 
+				<span style="width: 100%; display: block;text-align: center;text-transform: uppercase; font-size: 14px;">brief about our features</span>
+				<h4 style="text-align: center; width: 100%; margin-bottom: 40px;padding: 0;">How The Funding Process Works</h4>
 				<div class="our-servieces-left-right">
 					<div class="image-wrapper">
 						<img src="./img/services/3.jpg" alt="left">
@@ -223,6 +255,8 @@
 				</div>
 
 				
+				<span style="width: 100%; display: block;text-align: center;text-transform: uppercase; font-size: 14px; margin-top: 60px;">our company vs banks</span>
+				<h4  style="text-align: center; width: 100%; margin-bottom: 40px;padding: 0;">what's different between us and banks</h4>
 				<section class="yes-or-no-section-wrapper">
 					
 					<table id="customers">
@@ -232,57 +266,69 @@
 							<th>Bank</th>
 						</tr>
 						<tr>
-							<td>Different Rating From different Banks </td>
 							<td>
-								<img src="./img/services/yes.png" alt="">
+								<p>Different Rating From different Banks </p>
+							</td>
+							<td class="img-wrapper">
+								<img src="./img/services/done.png" alt="done">
 							</td>
 							<td>
-								<img src="./img/services/wrong.png" alt="">
-							</td>
-						</tr>
-						<tr>
-							<td>Fastest process</td>
-							<td>
-								<img src="./img/services/yes.png" alt="">
-							</td>
-							<td>
-								<img src="./img/services/wrong.png" alt="">
+								<img src="./img/services/wrong-sign.png" alt="">
 							</td>
 						</tr>
 						<tr>
-							<td>Apply for several products at the same time</td>
 							<td>
-								<img src="./img/services/yes.png" alt="">
+								<p>Fastest process</p>
+							</td>
+							<td class="img-wrapper">
+								<img src="./img/services/done.png" alt="done">
 							</td>
 							<td>
-								<img src="./img/services/wrong.png" alt="">
-							</td>
-						</tr>
-						<tr>
-							<td>Transparent Pricing Tool</td>
-							<td>
-								<img src="./img/services/yes.png" alt="">
-							</td>
-							<td>
-								<img src="./img/services/wrong.png" alt="">
+								<img src="./img/services/wrong-sign.png" alt="">
 							</td>
 						</tr>
 						<tr>
-							<td>Apply for products from a bank different than the one you are dealing with.</td>
 							<td>
-								<img src="./img/services/yes.png" alt="">
+								<p>Apply for several products at the same time</p>
+							</td>
+							<td class="img-wrapper">
+								<img src="./img/services/done.png" alt="done">
 							</td>
 							<td>
-								<img src="./img/services/wrong.png" alt="">
+								<img src="./img/services/wrong-sign.png" alt="">
 							</td>
 						</tr>
 						<tr>
-							<td>Repeat customer benefits</td>
 							<td>
-								<img src="./img/services/yes.png" alt="">
+								<p>Transparent Pricing Tool</p>
+							</td>
+							<td class="img-wrapper">
+								<img src="./img/services/done.png" alt="done">
 							</td>
 							<td>
-								<img src="./img/services/yes.png" alt="">
+								<img src="./img/services/wrong-sign.png" alt="">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Apply for products from a bank different than the one you are dealing with.</p>
+							</td>
+							<td class="img-wrapper">
+								<img src="./img/services/done.png" alt="done">
+							</td>
+							<td>
+								<img src="./img/services/wrong-sign.png" alt="">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>Repeat customer benefits</p>
+							</td>
+							<td class="img-wrapper">
+								<img src="./img/services/done.png" alt="done">
+							</td>
+							<td class="img-wrapper">
+								<img src="./img/services/done.png" alt="done">
 							</td>
 						</tr>
 					</table>
@@ -503,8 +549,8 @@
 	<script src="js/gsap.min.js"></script>
 	<script src="js/core.js"></script>
 
-	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="./js/swiber-bundle.js"></script>
+	<script src="./js/swiber-min-bundle.js"></script>
 
 	<script>
 		var mySwiper = new Swiper(".swiper-container", {
