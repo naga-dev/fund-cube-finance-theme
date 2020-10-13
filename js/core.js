@@ -33,8 +33,12 @@ class Ashade_Before_After {
       let this_class = this;
       this.$el = {
         $wrap: $obj,
-        $before: jQuery('<div class="ashade-before-after-img ashade-before-img"/>').appendTo($obj),
-        $after: jQuery('<div class="ashade-before-after-img ashade-after-img"/>').appendTo($obj),
+        $before: jQuery(
+          '<div class="ashade-before-after-img ashade-before-img"/>'
+        ).appendTo($obj),
+        $after: jQuery(
+          '<div class="ashade-before-after-img ashade-after-img"/>'
+        ).appendTo($obj),
         $divider: jQuery(
           '<div class="ashade-before-after-divider"><i class="la la-arrows-h"></i></div>'
         ).appendTo($obj),
@@ -45,8 +49,14 @@ class Ashade_Before_After {
       this.target = 50;
       this.isDown = false;
 
-      this.$el.$before.css("background-image", "url(" + this.$el.$wrap.data("img-before") + ")");
-      this.$el.$after.css("background-image", "url(" + this.$el.$wrap.data("img-after") + ")");
+      this.$el.$before.css(
+        "background-image",
+        "url(" + this.$el.$wrap.data("img-before") + ")"
+      );
+      this.$el.$after.css(
+        "background-image",
+        "url(" + this.$el.$wrap.data("img-after") + ")"
+      );
 
       // Mouse Events
       this.$el.$wrap
@@ -262,7 +272,11 @@ ashade.cursor = {
       (ashade.cursor.targetY - ashade.cursor.currentY) * ashade.cursor.easing;
     $this_el.css(
       "transform",
-      "translate3d(" + ashade.cursor.currentX + "px, " + ashade.cursor.currentY + "px, 0)"
+      "translate3d(" +
+        ashade.cursor.currentX +
+        "px, " +
+        ashade.cursor.currentY +
+        "px, 0)"
     );
     requestAnimationFrame(ashade.cursor.animate);
   },
@@ -328,7 +342,9 @@ if (jQuery(".ashade-kenburns-slider").length) {
       this_f.$el = jQuery(".ashade-kenburns-slider");
       this_f.items = this_f.$el.find(".ashade-kenburns-slide").length;
       this_f.transition = parseInt(this_f.$el.data("transition"), 10);
-      this_f.delay = parseInt(this_f.$el.data("delay"), 10) / 1000 + this_f.transition * 0.001;
+      this_f.delay =
+        parseInt(this_f.$el.data("delay"), 10) / 1000 +
+        this_f.transition * 0.001;
       this_f.zoom = this_f.$el.data("zoom");
       this_f.from = this_f.zoom;
       this_f.to = 1;
@@ -375,7 +391,9 @@ if (jQuery(".ashade-kenburns-slider").length) {
       if (this_f.active >= this_f.items) {
         this_f.active = 0;
       }
-      let current_slide = this_f.$el.find(".ashade-kenburns-slide").eq(this_f.active);
+      let current_slide = this_f.$el
+        .find(".ashade-kenburns-slide")
+        .eq(this_f.active);
 
       gsap.fromTo(
         current_slide,
@@ -424,7 +442,9 @@ ashade.counter = function (this_el) {
 ashade.progress = {
   init: function (this_el) {
     let $this = jQuery(this_el),
-      $bar_wrap = jQuery('<div class="ashade-progress-item-wrap"/>').prependTo($this),
+      $bar_wrap = jQuery('<div class="ashade-progress-item-wrap"/>').prependTo(
+        $this
+      ),
       this_size = this.getSize(this_el),
       $bar_svg = jQuery(
         '\
@@ -465,8 +485,15 @@ ashade.progress = {
       ).appendTo($bar_wrap);
     $bar_svg
       .find(".ashade-progress-circle--bar")
-      .css("transition", "stroke-dashoffset " + $this.data("delay") + "ms ease-in-out");
-    $bar_wrap.append('<span class="ashade-progress-counter">' + $this.data("percent") + "</span>");
+      .css(
+        "transition",
+        "stroke-dashoffset " + $this.data("delay") + "ms ease-in-out"
+      );
+    $bar_wrap.append(
+      '<span class="ashade-progress-counter">' +
+        $this.data("percent") +
+        "</span>"
+    );
 
     $ashade_window.on("resize", this.layout(this_el));
   },
@@ -494,7 +521,10 @@ ashade.progress = {
           cy: this_size.barSize,
           "stroke-dasharray": this_size.dashArray,
         })
-        .attr("transform", "rotate(-90, " + this_size.barSize + ", " + this_size.barSize + ")");
+        .attr(
+          "transform",
+          "rotate(-90, " + this_size.barSize + ", " + this_size.barSize + ")"
+        );
       if ($this.hasClass("is-done")) {
       } else {
         $bar.css("stroke-dashoffset", this_size.dashArray);
@@ -529,7 +559,10 @@ ashade.progress = {
         Counter: $this_counter.text(),
       },
       {
-        duration: parseInt($this_counter.parents(".ashade-progress-item").data("delay"), 10),
+        duration: parseInt(
+          $this_counter.parents(".ashade-progress-item").data("delay"),
+          10
+        ),
         easing: "swing",
         step: function (now) {
           $this_counter.text(Math.ceil(now) + "%");
@@ -622,8 +655,12 @@ ashade.sScroll = {
   current: 0,
   animate: function () {
     ashade.sScroll.current +=
-      (ashade.sScroll.target - ashade.sScroll.current) * ashade.config.smooth_ease;
-    $ashade_scroll.css("transform", "translate3d(0, -" + ashade.sScroll.current + "px, 0)");
+      (ashade.sScroll.target - ashade.sScroll.current) *
+      ashade.config.smooth_ease;
+    $ashade_scroll.css(
+      "transform",
+      "translate3d(0, -" + ashade.sScroll.current + "px, 0)"
+    );
 
     if ($ashade_scroll.height() !== $ashade_body.height()) {
       ashade.sScroll.layout();
@@ -641,7 +678,9 @@ ashade.sScroll = {
         let min_height = $ashade_window.height() - $ashade_footer.height();
 
         if (!$ashade_body.hasClass("no-header-padding"))
-          min_height = min_height - $ashade_scroll.children(".ashade-header-holder").height();
+          min_height =
+            min_height -
+            $ashade_scroll.children(".ashade-header-holder").height();
 
         this_content.css("min-height", min_height + "px");
         $ashade_scroll.addClass("is-centered");
@@ -732,7 +771,10 @@ ashade.init = function () {
             })
             .done(function (response) {
               $this.removeClass("is-in-action");
-              $response.empty().removeClass("alert-danger").addClass("alert-success");
+              $response
+                .empty()
+                .removeClass("alert-danger")
+                .addClass("alert-success");
               $response.html("<span>" + response + "</span>");
               $this.find('input:not([type="submit"]), textarea').val("");
               ashade.flocker.form_interract = false;
@@ -741,7 +783,10 @@ ashade.init = function () {
             })
             .fail(function (data) {
               $this.removeClass("is-in-action");
-              $response.empty().removeClass("alert-success").addClass("alert-danger");
+              $response
+                .empty()
+                .removeClass("alert-success")
+                .addClass("alert-danger");
               $response.html("<span>" + data.responseText + "</span>");
               ashade.flocker.form_interract = false;
               ashade.flocker.field_interract = false;
@@ -749,15 +794,20 @@ ashade.init = function () {
             });
         } else {
           if ($this.attr("data-spam-message")) {
-            var spam_message = "<span>" + $this.attr("data-spam-message") + "</span>";
+            var spam_message =
+              "<span>" + $this.attr("data-spam-message") + "</span>";
           } else {
-            var spam_message = "<span>No user actions detected. Look like a spam bot.</span>";
+            var spam_message =
+              "<span>No user actions detected. Look like a spam bot.</span>";
           }
           ashade.flocker.form_interract = false;
           ashade.flocker.field_interract = false;
           ashade.flocker.field_changed = false;
           $this.find('input:not([type="submit"]), textarea').val("");
-          $response.empty().removeClass("alert-success").addClass("alert-danger");
+          $response
+            .empty()
+            .removeClass("alert-success")
+            .addClass("alert-danger");
           $response.html(spam_message);
         }
       });
@@ -766,7 +816,9 @@ ashade.init = function () {
 
   // Header Holder
   $ashade_header_holder = jQuery('<div class="ashade-header-holder"></div>');
-  $ashade_header_holder.height($ashade_header.height()).prependTo($ashade_scroll);
+  $ashade_header_holder
+    .height($ashade_header.height())
+    .prependTo($ashade_scroll);
 
   // Set Logo Size
   if (jQuery("a.ashade-logo").length) {
@@ -798,17 +850,21 @@ ashade.init = function () {
           jQuery(".ashade-page-title-wrap").html() +
           "</div>"
       );
-      jQuery(".ashade-content-wrap .ashade-content").prepend(ashade_mobile_title);
+      jQuery(".ashade-content-wrap .ashade-content").prepend(
+        ashade_mobile_title
+      );
     }
   }
   let ashade_mobile_header = jQuery('<div class="ashade-mobile-header">'),
     mobile_menu_button = jQuery(
       '<a href="#" class="ashade-mobile-menu-button"><i class="la la-bars"></i></a>'
     ).appendTo(ashade_mobile_header),
-    mobile_menu = jQuery('<nav class="ashade-mobile-menu"></nav>').appendTo($ashade_body),
-    mobile_menu_close = jQuery('<a href="#" class="ashade-mobile-menu-close"></a>').appendTo(
-      mobile_menu
-    );
+    mobile_menu = jQuery('<nav class="ashade-mobile-menu"></nav>').appendTo(
+      $ashade_body
+    ),
+    mobile_menu_close = jQuery(
+      '<a href="#" class="ashade-mobile-menu-close"></a>'
+    ).appendTo(mobile_menu);
 
   if (jQuery(".ashade-aside-overlay").length) {
     ashade_mobile_header.append(
@@ -851,7 +907,10 @@ ashade.init = function () {
     mobile_menu.find("ul.main-menu a").on("click", function (e) {
       var $this = jQuery(this),
         $parent = $this.parent();
-      if ($parent.hasClass(".menu-item-has-children") || $parent.find("ul").length) {
+      if (
+        $parent.hasClass(".menu-item-has-children") ||
+        $parent.find("ul").length
+      ) {
         e.preventDefault();
         $parent.children("ul").slideToggle(300).toggleClass("is-open");
       }
@@ -905,14 +964,18 @@ ashade.init = function () {
         delay: setDelay,
         stagger: 0.1,
         onComplete: function () {
-          $ashade_body.removeClass("ashade-mobile-menu-shown").removeClass("is-locked");
+          $ashade_body
+            .removeClass("ashade-mobile-menu-shown")
+            .removeClass("is-locked");
         },
       }
     );
   });
 
   jQuery(".ashade-menu-overlay").on("click", function () {
-    $ashade_body.removeClass("ashade-mobile-menu-shown").removeClass("is-locked");
+    $ashade_body
+      .removeClass("ashade-mobile-menu-shown")
+      .removeClass("is-locked");
   });
 
   // Aside Open and Close
@@ -1061,7 +1124,9 @@ ashade.init = function () {
       );
 
       if (jQuery(".ashade-page-title-wrap").length) {
-        jQuery(".ashade-page-title-wrap").removeClass("is-loaded").addClass("is-inactive");
+        jQuery(".ashade-page-title-wrap")
+          .removeClass("is-loaded")
+          .addClass("is-inactive");
         gsap.to(".ashade-page-title-wrap", 0.5, {
           css: {
             top: 0,
@@ -1070,7 +1135,9 @@ ashade.init = function () {
         });
       }
       if (jQuery(".ashade-back-wrap").length) {
-        jQuery(".ashade-back-wrap").removeClass("is-loaded").addClass("is-inactive");
+        jQuery(".ashade-back-wrap")
+          .removeClass("is-loaded")
+          .addClass("is-inactive");
         gsap.to(".ashade-back-wrap", 0.5, {
           css: {
             top: "200%",
@@ -1084,7 +1151,9 @@ ashade.init = function () {
         },
         delay: 1,
         onComplete: function () {
-          jQuery(".ashade-home-link--works").addClass("is-loaded").removeClass("is-inactive");
+          jQuery(".ashade-home-link--works")
+            .addClass("is-loaded")
+            .removeClass("is-inactive");
         },
       });
       gsap.to(".ashade-home-link--contacts", 0.5, {
@@ -1093,7 +1162,9 @@ ashade.init = function () {
         },
         delay: 1,
         onComplete: function () {
-          jQuery(".ashade-home-link--contacts").addClass("is-loaded").removeClass("is-inactive");
+          jQuery(".ashade-home-link--contacts")
+            .addClass("is-loaded")
+            .removeClass("is-inactive");
         },
       });
       gsap.to(".ashade-page-background", {
@@ -1112,7 +1183,10 @@ ashade.init = function () {
   // Page Background
   if (jQuery(".ashade-page-background[data-src]").length) {
     jQuery(".ashade-page-background[data-src]").each(function () {
-      jQuery(this).css("background-image", "url(" + jQuery(this).data("src") + ")");
+      jQuery(this).css(
+        "background-image",
+        "url(" + jQuery(this).data("src") + ")"
+      );
     });
   }
   // Home Template
@@ -1166,7 +1240,9 @@ ashade.init = function () {
           },
           delay: 1,
           onComplete: function () {
-            jQuery(".ashade-page-title-wrap").addClass("is-loaded").removeClass("is-inactive");
+            jQuery(".ashade-page-title-wrap")
+              .addClass("is-loaded")
+              .removeClass("is-inactive");
           },
         });
         gsap.to(".ashade-back-wrap", 0.5, {
@@ -1175,7 +1251,9 @@ ashade.init = function () {
           },
           delay: 1,
           onComplete: function () {
-            jQuery(".ashade-back-wrap").addClass("is-loaded").removeClass("is-inactive");
+            jQuery(".ashade-back-wrap")
+              .addClass("is-loaded")
+              .removeClass("is-inactive");
           },
         });
 
@@ -1230,7 +1308,10 @@ ashade.init = function () {
         // Nothing to do here. Open link in new tab.
       } else if ($this.is("[download]")) {
         // Nothing to do here. Download Link.
-      } else if (this_href.indexOf("tel:") > -1 || this_href.indexOf("mailto:") > -1) {
+      } else if (
+        this_href.indexOf("tel:") > -1 ||
+        this_href.indexOf("mailto:") > -1
+      ) {
         // Nothing to do here. Tel or Email Link
       } else {
         if (this_href == "#") {
@@ -1308,7 +1389,10 @@ ashade.init = function () {
 
       // After Init Functions
       if ($parent.hasClass("ashade-testimonials-carousel")) {
-        ashade_tns[$this.attr("id")].events.on("transitionEnd", ashade.sScroll.layout);
+        ashade_tns[$this.attr("id")].events.on(
+          "transitionEnd",
+          ashade.sScroll.layout
+        );
       }
     });
   }
@@ -1321,7 +1405,9 @@ ashade.init = function () {
           if (!jQuery(entry.target).hasClass("is-counted")) {
             if (entry.isIntersecting) {
               jQuery(entry.target).addClass("is-counted");
-              ashade.counter(jQuery(entry.target).children(".ashade-counter-value")[0]);
+              ashade.counter(
+                jQuery(entry.target).children(".ashade-counter-value")[0]
+              );
             }
           }
         });
@@ -1430,7 +1516,8 @@ ashade.init = function () {
           showHideOpacity: true,
           getThumbBoundsFn: function (index) {
             var thumbnail = $this[0],
-              pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+              pageYScroll =
+                window.pageYOffset || document.documentElement.scrollTop,
               rect = thumbnail.getBoundingClientRect();
 
             return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
@@ -1473,7 +1560,10 @@ ashade.layout = function () {
 
   // Header Padding to Home Template
   if (jQuery("#ashade-home-works").length) {
-    jQuery("#ashade-home-works").css("padding-top", $ashade_header.height() + "px");
+    jQuery("#ashade-home-works").css(
+      "padding-top",
+      $ashade_header.height() + "px"
+    );
   }
   // if (jQuery('#ashade-home-contacts').length) {
   // 	jQuery('#ashade-home-contacts').css('padding-top', $ashade_header.height()+'px');
@@ -1494,7 +1584,10 @@ ashade.layout = function () {
       if ($ashade_window.width() > 1200) {
         if ($prev.length) {
           var set_y =
-            (-1 * ($prev.height() - $prev.find(".ashade-service-item__content").height())) / 2;
+            (-1 *
+              ($prev.height() -
+                $prev.find(".ashade-service-item__content").height())) /
+            2;
           $this.css("margin-top", set_y + "px");
         }
       } else {
@@ -1556,7 +1649,9 @@ ashade.loading = function () {
         top: "100%",
       },
       onComplete: function () {
-        jQuery(".ashade-page-title-wrap:not(.is-inactive)").addClass("is-loaded");
+        jQuery(".ashade-page-title-wrap:not(.is-inactive)").addClass(
+          "is-loaded"
+        );
       },
     });
   }
@@ -1576,7 +1671,9 @@ ashade.loading = function () {
         top: "100%",
       },
       onComplete: function () {
-        jQuery(".ashade-home-link--works:not(.is-inactive)").addClass("is-loaded");
+        jQuery(".ashade-home-link--works:not(.is-inactive)").addClass(
+          "is-loaded"
+        );
       },
     });
     gsap.to(".ashade-home-link--contacts:not(.is-inactive)", 0.5, {
@@ -1584,7 +1681,9 @@ ashade.loading = function () {
         top: "100%",
       },
       onComplete: function () {
-        jQuery(".ashade-home-link--contacts:not(.is-inactive)").addClass("is-loaded");
+        jQuery(".ashade-home-link--contacts:not(.is-inactive)").addClass(
+          "is-loaded"
+        );
       },
     });
   }
@@ -1787,7 +1886,10 @@ ashade.loading = function () {
 ashade.change_location = function (this_href) {
   ashade.cursor.$el.addClass("is-unloading");
   $ashade_body.addClass("is-locked");
-  if ($ashade_window.width() < 760 && $ashade_body.hasClass("ashade-mobile-menu-shown")) {
+  if (
+    $ashade_window.width() < 760 &&
+    $ashade_body.hasClass("ashade-mobile-menu-shown")
+  ) {
     let setDelay = 0;
     $ashade_body.addClass("is-locked");
     if (jQuery(".ashade-mobile-menu").find(".is-open").length) {
@@ -1867,7 +1969,10 @@ ashade.change_location = function (this_href) {
   // Unload Albums Slider Content
   if (jQuery(".ashade-albums-slider").length) {
     if (jQuery(".ashade-album-item__title").length) {
-      setTimeout("jQuery('.ashade-album-item__title').removeClass('is-loaded')", 300);
+      setTimeout(
+        "jQuery('.ashade-album-item__title').removeClass('is-loaded')",
+        300
+      );
       gsap.to(".ashade-album-item__title", {
         css: {
           top: "0%",
@@ -1877,7 +1982,10 @@ ashade.change_location = function (this_href) {
       });
     }
     if (jQuery(".ashade-album-item__explore").length) {
-      setTimeout("jQuery('.ashade-album-item__explore').removeClass('is-loaded')", 300);
+      setTimeout(
+        "jQuery('.ashade-album-item__explore').removeClass('is-loaded')",
+        300
+      );
       gsap.to(".ashade-album-item__explore", {
         css: {
           top: "200%",
@@ -1982,7 +2090,10 @@ ashade.change_location = function (this_href) {
 
   // Remove Page Title and Guides
   if (jQuery(".ashade-page-title-wrap").length) {
-    setTimeout("jQuery('.ashade-page-title-wrap:not(.is-inactive)').removeClass('is-loaded')", 600);
+    setTimeout(
+      "jQuery('.ashade-page-title-wrap:not(.is-inactive)').removeClass('is-loaded')",
+      600
+    );
     gsap.to(".ashade-page-title-wrap", 0.5, {
       css: {
         top: 0,
@@ -1991,7 +2102,10 @@ ashade.change_location = function (this_href) {
     });
   }
   if (jQuery(".ashade-back-wrap").length) {
-    setTimeout("jQuery('.ashade-back-wrap:not(.is-inactive)').removeClass('is-loaded')", 600);
+    setTimeout(
+      "jQuery('.ashade-back-wrap:not(.is-inactive)').removeClass('is-loaded')",
+      600
+    );
     gsap.to(".ashade-back-wrap", 0.5, {
       css: {
         top: "200%",
@@ -2078,7 +2192,10 @@ $ashade_window
       $ashade_window.scrollTop(ashade.old_scroll_top);
     }
     ashade.sScroll.target = $ashade_window.scrollTop();
-    if (ashade.sScroll.target > $ashade_scroll.height() - $ashade_window.height()) {
+    if (
+      ashade.sScroll.target >
+      $ashade_scroll.height() - $ashade_window.height()
+    ) {
       ashade.sScroll.layout();
     }
 
@@ -2230,7 +2347,10 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+  if (
+    document.body.scrollTop > 100 ||
+    document.documentElement.scrollTop > 100
+  ) {
     appLogo.style.width = "60%";
     appHeaderChild.style.padding = "0 50px";
     appHeader.style.backgroundColor = "#17171b";
@@ -2255,7 +2375,9 @@ if (pathname === "/") location.replace("/index.html");
 function setNavigation() {
   let current_location = location.pathname.split("/")[1];
   if (current_location === "") return;
-  let menu_items = document.querySelector(".ashade-nav").getElementsByTagName("a");
+  let menu_items = document
+    .querySelector(".ashade-nav")
+    .getElementsByTagName("a");
   for (let i = 0, len = menu_items.length; i < len; i++) {
     if (menu_items[i].getAttribute("href").indexOf(current_location) !== -1) {
       menu_items[i].className = "acitve-link";

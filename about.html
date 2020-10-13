@@ -118,11 +118,10 @@
       }
       .accordion-wrapper {
         display: grid;
-        gap: 15px;
-        width: 80%;
         margin: 0 auto;
       }
-      .accordion {
+
+      .accordionButton {
         background-color: #114f38;
         color: #fff;
         cursor: pointer;
@@ -132,18 +131,18 @@
         border: none;
         outline: none;
         transition: 0.4s;
+        margin-bottom: 10px;
+        
       }
 
       .panel p {
         padding: 15px 0;
         font-size: 14px;
       }
-      .panel {
-        padding: 0 18px;
+      .accordionContent {
+        padding: 20px;
         background-color: #a1c8c5;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
+        margin-bottom: 10px;
       }
       .panel p {
         color: #000;
@@ -223,74 +222,54 @@
             </div>
           </section>
 
-          <div class="accordion-wrapper">
-            <span
-              style="
-                text-align: center;
-                text-transform: uppercase;
-                font-size: 12px;
-                font-weight: bold;
-              "
-              >frequently asked questions</span
-            >
-            <h3 style="text-align: center; line-height: 0.3">FAQ</h3>
-            <div>
-              <button class="accordion">
-                What are your loan amounts and terms?
-              </button>
-              <div class="panel">
-                <p>
-                  Our term loans range from $5,000 – $500,000 over 3 – 36 month
-                  terms. Our lines of credit go up to $100,000. Payments are
-                  made over six months. The lines are revolving so as you pay
-                  down your balance, your available funds increase.
-                </p>
-              </div>
+          <!-- ################################################################################################ -->
+          <!-- FAQ secction -->
+          <div id="accordion-demo" class="accordion-wrapper">
+          
+            <div class="accordionButton">What are your loan amounts and terms?</div>
+            <div class="accordionContent">
+              <p>
+                Our term loans range from $5,000 – $500,000 over 3 – 36 month
+                terms. Our lines of credit go up to $100,000. Payments are
+                made over six months. The lines are revolving so as you pay
+                down your balance, your available funds increase.
+              </p>
+            </div>
+          
+            <div class="accordionButton">How does the application process work?</div>
+            <div class="accordionContent">
+              <p>
+                Our term loans range from $5,000 – $500,000 over 3 – 36 month
+                terms. Our lines of credit go up to $100,000. Payments are
+                made over six months. The lines are revolving so as you pay
+                down your balance, your available funds increase.
+              </p>
+            </div>
+          
+            <div class="accordionButton">What information do I need to apply?</div>
+            <div class="accordionContent">
+              <p>
+                Our term loans range from $5,000 – $500,000 over 3 – 36 month
+                terms. Our lines of credit go up to $100,000. Payments are
+                made over six months. The lines are revolving so as you pay
+                down your balance, your available funds increase.
+              </p>
             </div>
 
-            <div>
-              <button class="accordion">
-                How does the application process work?
-              </button>
-              <div class="panel">
-                <p>
-                  Our term loans range from $5,000 – $500,000 over 3 – 36 month
-                  terms. Our lines of credit go up to $100,000. Payments are
-                  made over six months. The lines are revolving so as you pay
-                  down your balance, your available funds increase.
-                </p>
-              </div>
+            <div class="accordionButton">How do I qualify for Paycheck financing?</div>
+            <div class="accordionContent">
+              <p>
+                Our term loans range from $5,000 – $500,000 over 3 – 36 month
+                terms. Our lines of credit go up to $100,000. Payments are
+                made over six months. The lines are revolving so as you pay
+                down your balance, your available funds increase.
+              </p>
             </div>
-
-            <div>
-              <button class="accordion">
-                What information do I need to apply?
-              </button>
-              <div class="panel">
-                <p>
-                  Our term loans range from $5,000 – $500,000 over 3 – 36 month
-                  terms. Our lines of credit go up to $100,000. Payments are
-                  made over six months. The lines are revolving so as you pay
-                  down your balance, your available funds increase.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <button class="accordion">
-                How do I qualify for Paycheck financing?
-              </button>
-              <div class="panel">
-                <p>
-                  Our term loans range from $5,000 – $500,000 over 3 – 36 month
-                  terms. Our lines of credit go up to $100,000. Payments are
-                  made over six months. The lines are revolving so as you pay
-                  down your balance, your available funds increase.
-                </p>
-              </div>
-            </div>
+          
           </div>
+          <!-- FAQ secction -->
 
+          
           <div class="swiper-container">
             <h3 style="text-align: center">
               <span>Meet some of our features</span>
@@ -581,6 +560,7 @@
     <script src="js/photoswipe-ui-default.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/accordiom.min.js"></script>
     <script src="js/core.js"></script>
 
     <script>
@@ -610,20 +590,27 @@
         },
       });
 
-      var acc = document.getElementsByClassName("accordion");
-      var i;
 
-      for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function () {
-          this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-          } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-          }
+      $(function(){
+        $('#accordion-demo').accordiom({
+          speed: 300,
+          showFirstItem:true,
+          autoClosing:true,
+          openAll:false,
+          buttonBelowContent:false,
+          beforeChange: function () {},
+          afterchange: function () {},
+          onLoad: function () {}
         });
-      }
+        // open all panels
+        $().accordiom.openAll('#accordion-demo');
+
+        // close all panels
+        $().accordiom.closeAll('#accordion-demo');
+
+        // open accordion panel 3
+        $().accordiom.openItem('#accordion-demo', 0);
+      });
     </script>
   </body>
 </html>

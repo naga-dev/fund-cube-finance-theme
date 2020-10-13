@@ -18,74 +18,6 @@
 	<link type="text/css" rel="stylesheet" href="css/style.css">
 	<link type="text/css" rel="stylesheet" href="css/responsive.css">
 	<link rel="icon" type="image/png" href="./img/logo.ico" />
-
-	<style>
-		#customers {
-			border-collapse: collapse;
-			width: 100%;
-			margin: 0 auto;
-		}
-		
-		#customers td, #customers th {
-			padding: 8px;
-		}
-		#customers tr {
-			color: #000;
-			border-bottom: 1px solid #0000002e;
-		}
-		
-		#customers tr:nth-child(odd) {
-			background-color: #dedede;
-		}
-		#customers tr:nth-child(even) {
-			background-color: #a1c8c5;
-		}
-		
-		#customers th {
-			text-align: left;
-			background-color: #114f38;
-			color: white;
-			font-weight: 300;
-			/* padding: 12px 15px */
-			font-size: 14px
-		}
-		
-		#customers td {
-			padding: 8px 15px;
-			border: 1px solid #fff
-		}
-
-		#customers img {
-			width: 15px;
-			height: 15px;
-			margin: 0 auto
-		}
-
-		#customers .img-wrapper {
-			width: 100px;
-		}
-
-		@media screen  and (max-width: 992px) {
-			#customers {
-				width: 100% !important;
-			}
-
-			#customers td{
-				font-size: 10px !important
-			}
-
-			#customers td p{
-				line-height: 1.6;
-			}
-			
-			#customers th {
-				font-size: 12px !important;
-				padding: 5px !important;
-				width: 60% !important;
-			}
-		}
-		</style>
-
 </head>
 
 <body class="has-spotlight ashade-smooth-scroll">
@@ -227,7 +159,7 @@
 						</p>
 					</div>
 					<div class="image-wrapper">
-						<img src="./img/services/2.jpg" alt="left">
+						<img src="./img/services/drham.jpg" alt="left">
 					</div>
 				</div>
 
@@ -258,82 +190,77 @@
 				
 				<span style="width: 100%; display: block;text-align: center;text-transform: uppercase; font-size: 14px; margin-top: 60px;">our company vs banks</span>
 				<h4  style="text-align: center; width: 100%; margin-bottom: 40px;padding: 0;">what's different between us and banks</h4>
-				<section class="yes-or-no-section-wrapper">
+				<div class="comparison-services-wrapper">
+					<div class="content">
+						<div class="column services-column" style="border-radius: 15px 0 0 15px;">
+							<div class="title title-1">services</div>
+							<ul>
+								<li>Different Rating From different Banks</li>
+								<li>Fastest process</li>
+								<li>Apply for several products at the same time</li>
+								<li>Transparent Pricing Tool</li>
+								<li>Apply for products from a bank </li>
+								<li>Repeat customer benefits</li>
+							</ul>
+						</div>
+					</div>
+
+
+					<div class="content">
+						<div class="column our-services-column">
+							<div class="title title-2">Fund Cube</div>
+							<ul>
+								<li>
+									<img src="./img/services/done.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/done.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/done.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/done.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/done.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/done.png" alt="">
+								</li>
+							</ul>
+						</div>
+					</div>
 					
-					<table id="customers">
-						<tr>
-							<th>Service</th>
-							<th>Fund Cube</th>
-							<th>Bank</th>
-						</tr>
-						<tr>
-							<td>
-								<p>Different Rating From different Banks </p>
-							</td>
-							<td class="img-wrapper">
-								<img src="./img/services/done.png" alt="done">
-							</td>
-							<td>
-								<img src="./img/services/wrong-sign.png" alt="">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Fastest process</p>
-							</td>
-							<td class="img-wrapper">
-								<img src="./img/services/done.png" alt="done">
-							</td>
-							<td>
-								<img src="./img/services/wrong-sign.png" alt="">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Apply for several products at the same time</p>
-							</td>
-							<td class="img-wrapper">
-								<img src="./img/services/done.png" alt="done">
-							</td>
-							<td>
-								<img src="./img/services/wrong-sign.png" alt="">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Transparent Pricing Tool</p>
-							</td>
-							<td class="img-wrapper">
-								<img src="./img/services/done.png" alt="done">
-							</td>
-							<td>
-								<img src="./img/services/wrong-sign.png" alt="">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Apply for products from a bank different than the one you are dealing with.</p>
-							</td>
-							<td class="img-wrapper">
-								<img src="./img/services/done.png" alt="done">
-							</td>
-							<td>
-								<img src="./img/services/wrong-sign.png" alt="">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>Repeat customer benefits</p>
-							</td>
-							<td class="img-wrapper">
-								<img src="./img/services/done.png" alt="done">
-							</td>
-							<td class="img-wrapper">
-								<img src="./img/services/done.png" alt="done">
-							</td>
-						</tr>
-					</table>
-				</section>
+
+					<div class="content">
+						<div class="column banks-services-column"  style="border-radius: 0 15px 15px 0;">
+							<div class="title title-3">Banks</div>
+							<ul>
+								<li>
+									<img src="./img/services/wrong-sign.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/wrong-sign.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/wrong-sign.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/wrong-sign.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/wrong-sign.png" alt="">
+								</li>
+								<li>
+									<img src="./img/services/wrong-sign.png" alt="">
+								</li>
+							</ul>
+						</div>
+					</div>
+
+
+				</div>
 
 
 				<section class="meet-our-prev-works">
