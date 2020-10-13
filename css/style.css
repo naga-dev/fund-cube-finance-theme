@@ -3612,3 +3612,27 @@ p.ashade-intro {
     margin-bottom: 30px;
   }
 }
+
+.more-features-about-us {
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.more-features-about-us .img-wrapper img {
+  width: 100%;
+  max-height: 700px;
+  display: block;
+}
+
+.more-features-about-us .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-features-about-us .content li {
+  margin-bottom: 10px;
+}
