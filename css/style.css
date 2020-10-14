@@ -3300,8 +3300,21 @@ p.ashade-intro {
 .our-servieces-left-right {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  /* gap: 30px; */
-  /* margin: 60px auto; */
+}
+
+@media screen and (max-width: 767px) {
+  .our-servieces-left-right {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+
+  .our-servieces-left-right .image-wrapper {
+    order: 1 !important;
+  }
+  .our-servieces-left-right .content {
+    order: 2 !important;
+    margin-top: 40px !important;
+  }
 }
 
 .our-servieces-left-right .image-wrapper img {
