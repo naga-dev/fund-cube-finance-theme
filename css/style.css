@@ -823,7 +823,7 @@ input[type="submit"] {
 
 input::-webkit-input-placeholder {
   opacity: 1;
-  color: #000;
+  color: #808080;
 }
 
 input::-moz-placeholder {
@@ -833,22 +833,26 @@ input::-moz-placeholder {
 
 input::-ms-input-placeholder {
   opacity: 1;
-  color: #000;
+  color: #808080;
 }
 
 textarea::-webkit-input-placeholder {
   opacity: 1;
-  color: #000;
+  color: #808080;
 }
 
 textarea::-moz-placeholder {
   opacity: 1;
-  color: #000;
+  color: #808080;
 }
 
 textarea::-ms-input-placeholder {
   opacity: 1;
-  color: #000;
+  color: #808080;
+}
+
+.custom-input input::placeholder {
+  color: #000 !important;
 }
 
 .ashade-button:hover,
@@ -3641,9 +3645,5 @@ p.ashade-intro {
 .more-features-about-us .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-
-.more-features-about-us .content li {
-  margin-bottom: 10px;
+  justify-content: space-between;
 }
