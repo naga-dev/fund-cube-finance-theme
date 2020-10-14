@@ -823,7 +823,7 @@ input[type="submit"] {
 
 input::-webkit-input-placeholder {
   opacity: 1;
-  color: #808080;
+  color: #000;
 }
 
 input::-moz-placeholder {
@@ -833,22 +833,22 @@ input::-moz-placeholder {
 
 input::-ms-input-placeholder {
   opacity: 1;
-  color: #808080;
+  color: #000;
 }
 
 textarea::-webkit-input-placeholder {
   opacity: 1;
-  color: #808080;
+  color: #000;
 }
 
 textarea::-moz-placeholder {
   opacity: 1;
-  color: #808080;
+  color: #000;
 }
 
 textarea::-ms-input-placeholder {
   opacity: 1;
-  color: #808080;
+  color: #000;
 }
 
 .ashade-button:hover,
@@ -1655,6 +1655,10 @@ a.ashade-learn-more:hover:after {
 
 .ashade-widget--contacts .ashade-contact-details__list li {
   font-size: 14px;
+}
+.left-form-list li,
+.left-form-list li a {
+  color: #000;
 }
 
 /* 08. HOME TEMPLATE
@@ -3525,8 +3529,16 @@ p.ashade-intro {
 /*  Comparison section */
 .comparison-services-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   align-content: center;
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 992px) {
+  .comparison-services-wrapper {
+    width: 100% !important;
+  }
 }
 
 .comparison-services-wrapper .column {
