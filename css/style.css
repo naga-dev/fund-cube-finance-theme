@@ -3561,8 +3561,9 @@ p.ashade-intro {
   align-content: center;
   width: 75%;
   margin: 0 auto;
+  font-size: 12px !important;
 }
-@media screen and (max-width: 1418px) {
+@media screen and (max-width: 1400px) {
   .comparison-services-wrapper {
     width: 100% !important;
   }
@@ -3576,7 +3577,12 @@ p.ashade-intro {
   }
 
   .comparison-services-wrapper .column ul li {
-    font-size: 12px !important;
+    font-size: 10px !important;
+  }
+
+  .comparison-services-wrapper .column ul .big-pharse {
+    line-height: 1.2;
+    padding: 25px 0 !important;
   }
 }
 
@@ -3657,10 +3663,10 @@ p.ashade-intro {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
   text-align: center;
   padding: 15px 0;
 }
+
 .comparison-services-wrapper .column ul li:last-of-type {
   border-bottom: none !important;
 }
