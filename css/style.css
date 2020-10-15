@@ -3565,7 +3565,6 @@ p.ashade-intro {
 @media screen and (max-width: 1418px) {
   .comparison-services-wrapper {
     width: 100% !important;
-    gap: 30px;
   }
 
   .comparison-services-wrapper .content {
@@ -3578,6 +3577,12 @@ p.ashade-intro {
 
   .comparison-services-wrapper .column ul li {
     font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .comparison-services-wrapper {
+    gap: 30px !important;
   }
 }
 
@@ -3653,6 +3658,9 @@ p.ashade-intro {
   font-size: 14px;
   text-align: center;
   padding: 15px 0;
+}
+.comparison-services-wrapper .column ul li:last-of-type {
+  border-bottom: none !important;
 }
 
 @media screen and (max-width: 767px) {
