@@ -3409,12 +3409,13 @@ p.ashade-intro {
 }
 
 .our-services-intro-wrapper {
+  margin: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   -webkit-gap: 2rem;
   gap: 30px;
-  margin: 0 auto 60px auto;
+  /* margin: 0 auto 60px auto; */
 }
 
 .flip-card {
@@ -3426,6 +3427,18 @@ p.ashade-intro {
   overflow: hidden;
   border: 1px solid gray;
   padding: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .our-services-intro-wrapper .flip-card {
+    flex: 0 0 calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .our-services-intro-wrapper .flip-card {
+    flex: 0 0 calc(100% - 2rem);
+  }
 }
 
 .flip-card-inner {
