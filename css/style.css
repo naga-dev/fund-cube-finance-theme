@@ -3409,16 +3409,13 @@ p.ashade-intro {
 }
 
 .our-services-intro-wrapper {
-  margin: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  -webkit-gap: 2rem;
-  gap: 30px;
-  /* margin: 0 auto 60px auto; */
 }
 
 .flip-card {
+  margin: 1rem;
   background-color: transparent;
   flex: 0 0 calc(33% - 2rem);
   perspective: 1000px;
@@ -3435,7 +3432,7 @@ p.ashade-intro {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .our-services-intro-wrapper .flip-card {
     flex: 0 0 calc(100% - 2rem);
   }
