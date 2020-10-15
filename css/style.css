@@ -3412,7 +3412,8 @@ p.ashade-intro {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  -webkit-gap: 2rem;
+  gap: 30px;
   margin: 0 auto 60px auto;
 }
 
