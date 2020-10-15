@@ -3294,15 +3294,6 @@ p.ashade-intro {
   align-items: center;
 }
 
-.our-services-intro-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  -webkit-gap: 30px;
-  gap: 30px;
-  margin: 0 auto 60px auto;
-}
-
 @media screen and (max-width: 992px) {
   .our-services-intro-wrapper .flip-card {
     width: 100% !important;
@@ -3417,9 +3408,17 @@ p.ashade-intro {
   display: block;
 }
 
+.our-services-intro-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0 auto 60px auto;
+}
+
 .flip-card {
   background-color: transparent;
-  width: 30%;
+  flex: 0 0 calc(33% - 2rem);
   perspective: 1000px;
   min-height: 400px;
   border-radius: 10px;
