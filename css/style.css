@@ -749,7 +749,7 @@ textarea {
   border: 1px solid #313133;
   margin-bottom: 15px;
   font-size: 14px !important;
-  color: #000;
+  color: #888;
   font-weight: 500;
 }
 
@@ -784,6 +784,11 @@ textarea::placeholder {
   right: 0;
   z-index: 99;
   color: #fff !important;
+}
+
+.emirate-selection,
+.type-selection {
+  color: #000 !important;
 }
 
 /*hide the items when the select box is closed:*/
@@ -2703,10 +2708,6 @@ p.ashade-intro {
   transition: color 0.3s;
 }
 
-.ashade-contact-details__list a:hover {
-  color: #ffffff;
-}
-
 .ashade-contact-icon {
   width: 40px;
   height: 40px;
@@ -3556,16 +3557,25 @@ p.ashade-intro {
 /*  Comparison section */
 .comparison-services-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   align-content: center;
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
 }
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1418px) {
   .comparison-services-wrapper {
     width: 100% !important;
+    gap: 30px;
   }
+
+  .comparison-services-wrapper .content {
+    width: 100% !important;
+  }
+
+  .comparison-services-wrapper .content .column {
+    height: 100% !important;
+  }
+
   .comparison-services-wrapper .column ul li {
     font-size: 12px !important;
   }
@@ -3627,7 +3637,7 @@ p.ashade-intro {
 
 .comparison-services-wrapper li {
   display: flex;
-  padding: 10px 0 !important;
+  padding: 25px 0 !important;
 }
 
 .comparison-services-wrapper .column ul {
@@ -3637,7 +3647,6 @@ p.ashade-intro {
 .comparison-services-wrapper .column ul li {
   width: 100%;
   border-bottom: 1px solid rgba(119, 119, 119, 0.438);
-  padding: 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
