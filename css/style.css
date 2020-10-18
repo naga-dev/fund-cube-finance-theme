@@ -3591,11 +3591,8 @@ p.ashade-intro {
   .comparison-services-wrapper .column ul li {
     font-size: 10px !important;
   }
-}
-
-@media screen and (max-width: 1200px) {
-  .comparison-services-wrapper .column ul li {
-    /* line-height: 1.1 !important; */
+  .comparison-services-wrapper .big-pharse {
+    line-height: 1.4;
   }
 }
 
