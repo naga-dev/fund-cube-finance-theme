@@ -939,6 +939,11 @@ form.ashade-contact-form.is-in-action:before {
   }
 }
 
+.contact-page-form input,
+textarea {
+  color: #000;
+}
+
 /* 04. HEADER
 		 ---------- */
 header#ashade-header {
