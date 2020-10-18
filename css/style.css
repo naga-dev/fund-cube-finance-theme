@@ -3580,6 +3580,10 @@ p.ashade-intro {
   font-size: 12px !important;
 }
 
+.comparison-services-wrapper ul li {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 1400px) {
   .comparison-services-wrapper {
     width: 65% !important;
