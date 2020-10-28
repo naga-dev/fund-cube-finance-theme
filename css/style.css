@@ -941,6 +941,10 @@ form.ashade-contact-form.is-in-action:before {
 
 .contact-page-form input,
 textarea {
+  color: #fff;
+}
+
+.contact-page-form textarea {
   color: #000;
 }
 
