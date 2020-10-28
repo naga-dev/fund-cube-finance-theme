@@ -632,6 +632,36 @@
         // open accordion panel 3
         $().accordiom.openItem('#accordion-demo', 0);
       });
+
+      // Fix scroll when keyboard show
+		var currentElem;	
+
+    function stopScroll() 
+    {
+        if(currentElem)
+        {
+          var top = $("textarea:focus").offset().top;
+          $('html, body').stop().animate({
+            scrollTop: top
+        }, 500, function(){});
+        }
+    }
+
+    function disableScrolling(elem) 
+    {
+        currentElem = elem;
+        document.addEventListener("touchend", stopScroll);
+        setTimeout(function()
+        {
+            stopScroll();
+        },10);
+    }
+
+    function enableScrolling() 
+    {
+        currentElem = undefined;
+        document.removeEventListener("touchend", stopScroll);
+    }
     </script>
   </body>
 </html>

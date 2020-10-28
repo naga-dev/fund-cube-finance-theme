@@ -335,5 +335,39 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/gsap.min.js"></script>
     <script src="js/core.js"></script>
+
+    <script>
+
+      // Fix scroll when keyboard show
+        var currentElem;	
+
+    function stopScroll() 
+    {
+        if(currentElem)
+        {
+          var top = $("textarea:focus").offset().top;
+
+          $('html, body').stop().animate({
+            scrollTop: top
+        }, 500, function(){});
+        }
+    }
+
+    function disableScrolling(elem) 
+    {
+        currentElem = elem;
+        document.addEventListener("touchend", stopScroll);
+        setTimeout(function()
+        {
+            stopScroll();
+        },10);
+    }
+
+    function enableScrolling() 
+    {
+        currentElem = undefined;
+        document.removeEventListener("touchend", stopScroll);
+    }
+    </script>
   </body>
 </html>
